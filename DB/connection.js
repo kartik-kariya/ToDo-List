@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const uri = "mongodb+srv://admin:todo_admin@cluster0.ze08l.mongodb.net/todoDB?retryWrites=true&w=majority";
+const uri = "<Cloud server DB link>";
 // const uri = "mongodb://localhost:27017/todoDB";
 
 const connectDB = async () => {
