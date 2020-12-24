@@ -16,7 +16,7 @@ app.use(require('./routes/index'));
 app.use(require('./routes/todo'));
 app.use(require('./routes/google'));
 
-
-app.listen(3000,() => {
-    console.log("Server Running at localhost:3000");
+const port = process.env.PORT || 3000;
+app.listen(port,() => {
+    console.log(`Listening on Port: ${port}`);
 })
