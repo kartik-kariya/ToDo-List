@@ -1,0 +1,27 @@
+<%- include('./partials/header.ejs') -%>
+<!-- As a link -->
+<div class="box container">
+    <div class="card shadow-lg mt-5 p-5">
+      <label class="text-center text-muted"><h1>To-Do List</h1></label>
+      <hr/>
+      <div>
+        <label class="text-muted">Welcome <%= name %>,</label>
+        <a href="/logout" class="d-flex btn btn-sm btn-success" style="float: right;">Logout</a>  
+      </div>
+      <hr/>
+
+        <form action="/todo/add" method="POST" class="d-flex">
+          <input type="text" name="todo" class="form-control" placeholder="Enter Todo">
+          <input type="submit" value="Add ToDo" class="btn btn-md btn-primary mx-2">
+        </form>
+      
+        <ul class="list-group mt-5">
+          <% todo.forEach(todos => { %>
+              <li class="list-group-item"><%= todos.todo %>
+                <a href="/todo/delete/<%= todos._id %>" class="btn btn-sm btn-danger" style="float: right;">Delete</a>
+              </li>
+          <% }) %>
+        </ul>
+    </div>
+</div>
+<%- include('./partials/footer.ejs') -%>
